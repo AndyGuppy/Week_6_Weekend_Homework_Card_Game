@@ -3,22 +3,22 @@ package cardGame;
 public class Card
 {
   
-  private CardValue cardValue;
-  private Suit suit;
+  private CardValueEnum cardValue;
+  private CardSuitEnum suit;
 
-  public Card (CardValue cardValue, Suit suit)
+  public Card (CardValueEnum cardValue, CardSuitEnum suit)
   {
     this.cardValue = cardValue;
     this.suit = suit;
   }
   
-  public Suit getSuit()
+  public CardSuitEnum getSuit()
   {
     return this.suit;
   }
 
   
-  public CardValue getCardValue()
+  public CardValueEnum getCardValue()
   {
     return this.cardValue;
   }

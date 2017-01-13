@@ -11,23 +11,23 @@ public class CardTest {
 
  @Before 
  public void before(){
-  twoOfHearts = new Card(CardValue.TWO, Suit.HEARTS);
-  threeOfSpades = new Card(CardValue.THREE, Suit.SPADES);
+  twoOfHearts = new Card(CardValueEnum.TWO, CardSuitEnum.HEARTS);
+  threeOfSpades = new Card(CardValueEnum.THREE, CardSuitEnum.SPADES);
 }
 
 @Test
 public void canGetCardValue(){
- assertEquals(CardValue.TWO,twoOfHearts.getCardValue());
+ assertEquals(CardValueEnum.TWO,twoOfHearts.getCardValue());
 } 
 
 @Test
 public void canGetSuit() {
- assertEquals(Suit.HEARTS, twoOfHearts.getSuit());
+ assertEquals(CardSuitEnum.HEARTS, twoOfHearts.getSuit());
 }
 
 
 @Test
 public void canGetDifferentSuit() {
- assertEquals(Suit.SPADES, threeOfSpades.getSuit());
+ assertEquals(CardSuitEnum.SPADES, threeOfSpades.getSuit());
 }
 }

@@ -1,6 +1,6 @@
 package cardGame;
 
-public enum CardValue
+public enum CardValueEnum
 {
   TWO(2),
   THREE(3),
@@ -18,7 +18,7 @@ public enum CardValue
  
   private int cardValue;
   
-  private CardValue (int value)
+  private CardValueEnum (int value)
   {
     this.cardValue = value;
   }
