@@ -1,58 +1,57 @@
 import static org.junit.Assert.*;
+import static org.mockito.Mockito.*;
 import org.junit.*;
 import cardGame.*;
+import java.util.*;
+import org.mockito.*;
+
 
 public class DeckTest {
 
-  Deck threeCardDeck, moreCardDeck;
-  Card cardOne, cardTwo, cardThree, cardFour, cardFive;
+  Deck deck;
+  Card cardOne, cardFourteen;
+
 
   @Before
   public void before() {
-    cardOne = new Card(CardValueEnum.TWO, CardSuitEnum.SPADES);
-    cardTwo = new Card(CardValueEnum.NINE, CardSuitEnum.HEARTS);
-    cardThree = new Card(CardValueEnum.ACE, CardSuitEnum.DIAMONDS);
-    cardFour = new Card(CardValueEnum.SEVEN, CardSuitEnum.HEARTS);
-    cardFive = new Card(CardValueEnum.QUEEN, CardSuitEnum.CLUBS);
 
-    
-    threeCardDeck = new Deck();
-    moreCardDeck = new Deck();
-
-    threeCardDeck.addCard(cardOne);
-    threeCardDeck.addCard(cardTwo);
-    threeCardDeck.addCard(cardThree);
-
-     moreCardDeck.addCard(cardOne);
-     moreCardDeck.addCard(cardTwo);
-     moreCardDeck.addCard(cardThree);
-     moreCardDeck.addCard(cardFour);
-     moreCardDeck.addCard(cardFive);
-
-
+    deck = new Deck();
+    cardOne = new Card(CardValueEnum.TWO, CardSuitEnum.HEARTS); // First card in Deck will alway be TWO of HEARTS until initial deck is shuffled
+    cardFourteen = new Card(CardValueEnum.TWO, CardSuitEnum.SPADES); // First card in Deck will alway be TWO of HEARTS until initial deck is shuffled
   }
 
   @Test
   public void canCreateaDeck() {
-    assertNotNull(threeCardDeck);
+    assertNotNull(deck);
   }
 
   @Test
   public void canDealaCard() {
-    assertEquals(cardOne, threeCardDeck.dealCard());
+    Card result = deck.dealCard();
+    for (int s=0; s<13; s++)
+    {
+      result = deck.dealCard();
+    }
+    assertEquals(cardFourteen.getSuit(), result.getSuit());
+    assertEquals(cardFourteen.getCardValue(), result.getCardValue());
+  }
+
+  @Test
+  public void checkCardsarenotallthesame() {
+    Card result = deck.dealCard();
+    assertEquals(cardOne.getSuit(), result.getSuit());
+    assertEquals(cardOne.getCardValue(), result.getCardValue());
   }
 
   @Test
   public void canGetSize() {
-    assertEquals(3, threeCardDeck.size());
-    assertEquals(5, moreCardDeck.size());
+    assertEquals(52, deck.size());
   }
 
   @Test
   public void checkIfDeckReducesAfterDealingACard() {
-    moreCardDeck.dealCard();
-    assertEquals(4, moreCardDeck.size());
+    deck.dealCard();
+    assertEquals(51, deck.size());
   }
-
 
 }

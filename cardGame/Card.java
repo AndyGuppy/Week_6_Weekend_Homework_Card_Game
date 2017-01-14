@@ -1,6 +1,7 @@
 package cardGame;
 
-public class Card
+
+public class Card 
 {
   
   private CardValueEnum cardValue;
