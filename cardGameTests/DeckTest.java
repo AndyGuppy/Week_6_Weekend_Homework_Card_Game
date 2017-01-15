@@ -16,8 +16,8 @@ public class DeckTest {
   public void before() {
 
     deck = new Deck();
-    cardOne = new Card(CardValueEnum.TWO, CardSuitEnum.HEARTS); // First card in Deck will alway be TWO of HEARTS until initial deck is shuffled
-    cardFourteen = new Card(CardValueEnum.TWO, CardSuitEnum.SPADES); // First card in Deck will alway be TWO of HEARTS until initial deck is shuffled
+    cardOne = new Card(CardValueEnum.ACE, CardSuitEnum.HEARTS); // First card in Deck will alway be TWO of HEARTS until initial deck is shuffled
+    cardFourteen = new Card(CardValueEnum.ACE, CardSuitEnum.SPADES); // First card in Deck will alway be TWO of HEARTS until initial deck is shuffled
   }
 
   @Test

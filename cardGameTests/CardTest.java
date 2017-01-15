@@ -17,7 +17,7 @@ public class CardTest {
 
 @Test
 public void canGetCardValue(){
- assertEquals(CardValueEnum.TWO,twoOfHearts.getCardValue());
+ assertEquals(2,twoOfHearts.getCardValue());
 } 
 
 @Test
