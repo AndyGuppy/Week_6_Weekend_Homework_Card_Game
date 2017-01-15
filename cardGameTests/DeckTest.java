@@ -35,6 +35,18 @@ public class DeckTest {
     assertEquals(cardFourteen.getSuit(), result.getSuit());
     assertEquals(cardFourteen.getCardValue(), result.getCardValue());
   }
+// the below code proves the shuffle deck works but i need to devise a mock test for card at a later date
+  // @Test
+  // public void ShuffledCards() {
+  //   deck.shuffleDeck();
+  //   Card result = deck.dealCard();
+  //   for (int s=0; s<13; s++)
+  //   {
+  //     result = deck.dealCard();
+  //   }
+  //   assertEquals(cardFourteen.getSuit(), result.getSuit());
+  //   assertEquals(cardFourteen.getCardValue(), result.getCardValue());
+  // }
 
   @Test
   public void checkCardsarenotallthesame() {
@@ -45,13 +57,13 @@ public class DeckTest {
 
   @Test
   public void canGetSize() {
-    assertEquals(52, deck.size());
+    assertEquals(52, deck.decksize());
   }
 
   @Test
   public void checkIfDeckReducesAfterDealingACard() {
     deck.dealCard();
-    assertEquals(51, deck.size());
+    assertEquals(51, deck.decksize());
   }
 
 }
